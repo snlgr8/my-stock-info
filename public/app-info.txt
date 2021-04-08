@@ -1,0 +1,14 @@
+How many lipsticks ? 
+what category 
+how many nail paints? 
+pictures 
+1. Product 
+    - name
+    - Actual price
+    - tags/category
+    - image
+    - link to amazon
+    - Price bought
+    - Rating/Review
+
+    

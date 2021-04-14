@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Login from '../Authentication/Login';
 
 function Header() {
   return (
@@ -21,4 +22,8 @@ const MainTitle = styled.h2`
   font-weight: 700;
   padding-top: 15px;
   font-family: 'Calligraffitti', cursive;
+`;
+
+const LoginButton = styled.button`
+  background-color: white;
 `;

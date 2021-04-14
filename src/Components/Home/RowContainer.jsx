@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from './Banner';
+import Banner from '../Header/Banner';
 import Home from './Home';
 
 function RowContainer({ category, products, id }) {

@@ -1,18 +1,19 @@
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import { useEffect, useState } from "react";
+import styled from "styled-components";
 
-import Header from './Components/Header/Header';
-import RowContainer from './Components/Home/RowContainer';
-import AdminHome from './Components/Admin/Home/AdminHome';
-import { db } from './config/firebase';
+import Header from "./Components/Header/Header";
+import RowContainer from "./Components/Home/RowContainer";
+import AdminHome from "./Components/Admin/Home/AdminHome";
+import { db } from "./config/firebase";
+import SignIn from "./Components/Authentication/SignIn.component";
 
 function App() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
-  const [user, setUser] = useState('Sonal');
+  const [user, setUser] = useState(null);
 
   const getProducts = () => {
-    db.collection('product').onSnapshot((snap) => {
+    db.collection("product").onSnapshot((snap) => {
       let tempProduct = [];
 
       tempProduct = snap.docs.map((data) => ({
@@ -25,7 +26,7 @@ function App() {
   };
 
   const getCategories = () => {
-    db.collection('category').onSnapshot((snap) => {
+    db.collection("category").onSnapshot((snap) => {
       const tempCategory = snap.docs.map((data) => ({
         id: data.id,
         data: data.data(),
@@ -54,6 +55,7 @@ function App() {
     return (
       <AppContainer>
         <Header />
+        <SignIn />
         {categories.map((d) => (
           <RowContainer
             category={d.data}
